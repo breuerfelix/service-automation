@@ -1,8 +1,9 @@
 { pkgs ? import <nixpkgs> {} }:
   pkgs.mkShell {
     buildInputs = with pkgs; [
+      # go # uses latest
       go_1_19
-      # go
+      slides # presentation tool
     ];
 
     shellHook = ''
