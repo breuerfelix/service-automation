@@ -96,6 +96,8 @@ Problem:
 * `main` Branch protection
   * Repo -> Settings -> Branches
 * Require a pull request before merging
+* Require approval
+  * keep hotfix case in mind
 * Require status checks to pass before merging
 * Require conversation resolution before merging
 
@@ -229,6 +231,11 @@ Problem:
 * scans your Repositories daily
 * opens a PR if a version updates
 * is configureable to lock packages
+* auto-approve
+
+1. renovate at midnight
+2. e2e tests
+3. release in the morning
 
 ---
 
