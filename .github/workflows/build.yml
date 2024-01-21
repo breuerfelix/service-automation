@@ -1,8 +1,6 @@
 name: build, lint, test
 
-on:
-  push:
-    branches: ['**']
+on: [pull_request]
 
 jobs:
   build:

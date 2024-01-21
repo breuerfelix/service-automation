@@ -18,7 +18,7 @@ jobs:
         uses: docker/metadata-action@v4
         with:
           images: |
-            ghcr.io/breuerfelix/juicefs-volume-hook
+            ghcr.io/breuerfelix/service-automation
           tags: |
             type=ref,event=branch
             type=semver,pattern={{version}}
