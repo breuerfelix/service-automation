@@ -1,33 +1,25 @@
-# Use the official Golang image as the base image
-FROM golang:1.21-alpine AS builder
+# Build the manager binary
+FROM golang:1.21-alpine as builder
 
-# Set the working directory inside the container
-WORKDIR /app
-
-# Copy the Go modules files
-COPY go.mod .
-COPY go.sum .
-
-# Download and install Go dependencies
+WORKDIR /workspace
+# Copy the Go Modules manifests
+COPY go.mod go.mod
+COPY go.sum go.sum
+# cache deps before building and copying source so that we don't need to re-download as much
+# and so that source changes don't invalidate our downloaded layer
 RUN go mod download
 
-# Copy the source code into the container
-COPY . .
+# Copy the go source
+COPY main.go main.go
 
-# Build the Go application
-RUN go build -o app
+# Build
+RUN CGO_ENABLED=0 GOOS=linux GOARCH=amd64 go build -a -o app .
 
-# Use a minimal Alpine image as the base image for the final image
-FROM alpine:latest
+# Use distroless as minimal base image to package the manager binary
+# Refer to https://github.com/GoogleContainerTools/distroless for more details
+FROM gcr.io/distroless/static:nonroot
+WORKDIR /
+COPY --from=builder /workspace/app .
+USER 65532:65532
 
-# Set the working directory inside the container
-WORKDIR /app
-
-# Copy the built executable from the builder image
-COPY --from=builder /app/app .
-
-# Expose the port that the application will run on
-EXPOSE 8080
-
-# Command to run the application
-CMD ["./app"]
+ENTRYPOINT ["/app"]
