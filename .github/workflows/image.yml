@@ -3,7 +3,7 @@ name: image
 on:
   push:
     branches: ['**']
-    tags: ['*.*.*']
+    tags: ['v*.*.*']
 
 jobs:
   docker:
