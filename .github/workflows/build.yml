@@ -1,7 +1,8 @@
 name: build, lint, test
 
 on:
-  pull_request:
+  push:
+    branches: ['**']
 
 jobs:
   build:
@@ -24,9 +25,3 @@ jobs:
 
     - name: Test
       run: go test ./...
-
-    - name: Container Image
-        run: |
-          echo ${{ secrets.GITHUB_TOKEN }} | docker login ghcr.io -u ${{ github.actor }} --password-stdin
-          docker build -t ghcr.io/${{ github.repository }}/talks/service-automation:${{ github.sha }} .
-          docker push ghcr.io/${{ github.repository }}/talks/service-automation:${{ github.sha }}
