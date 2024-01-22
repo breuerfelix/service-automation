@@ -2,6 +2,7 @@ package main
 
 import (
 	"github.com/gin-gonic/gin"
+	_ "go.uber.org/automaxprocs"
 )
 
 func main() {
