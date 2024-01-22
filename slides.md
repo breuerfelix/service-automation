@@ -253,3 +253,14 @@ Problem:
 * runs on PR
 * calculates code coverage
 * lets you define quality gates
+
+---
+
+# Links
+
+* Linkedin: Felix Breuer
+* breuer.dev
+* github.com/breuerfelix
+* github.com/breuerfelix/service-automation
+* github.com/breuerfelix/service-automation/slides.md
+* inovex GmbH
