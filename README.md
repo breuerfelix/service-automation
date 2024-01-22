@@ -1,9 +1,9 @@
-# service-automation
+# Service Automation Example
 
 This is an example repository that uses several best practices in terms of software management.  
 See [slides](slides.md) for more details.
 
-## slides
+## Slides
 
 Start the presentation:
 
