@@ -1,5 +1,5 @@
 ---
-author: Felix Breuer
+author: github.com/breuerfelix
 paging: Slide %d / %d
 ---
 
@@ -12,7 +12,7 @@ paging: Slide %d / %d
 * 2020 TH Köln Bachelor Technische Informatik
 * Cloud Systems Engineer @ inovex GmbH
 * Kubernetes as a Service @ STACKIT
-* Kubernetes Platform Engineering @ Big German Streaming Platform
+* Kubernetes Platform Engineering @ German Streaming Platform
 
 ---
 
@@ -154,17 +154,19 @@ Problem:
 
 `<type>[optional scope]: <description>`
 
-type: `fix | feat | feat!`
+type: `fix | feat | feat! | ...`
 
 ```git
-feat[router]: adds hello world route
+chore(router): adds hello world route
 ```
 
 ```git
-feat!: changes hello world path
+feat: changes hello world path
+
+BREAKING CHANGE: refactor old route
 ```
 
-* `feat!` -> MAJOR
+* `BREAKING CHANGE` in footer -> MAJOR
 * `feat` -> MINOR
 * `fix` -> PATCH
 
@@ -256,6 +258,16 @@ Problem:
 
 ---
 
+# Recap
+
+* Automation & Rules
+* Rules & Automation
+* don't rely on People
+* rely on Pipelines
+* BUT think about hotfixes
+
+---
+
 # Links
 
 * Linkedin: Felix Breuer
@@ -263,4 +275,4 @@ Problem:
 * github.com/breuerfelix
 * github.com/breuerfelix/service-automation
 * github.com/breuerfelix/service-automation/slides.md
-* inovex GmbH
+* inovex.de
