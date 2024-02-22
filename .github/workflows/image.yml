@@ -1,9 +1,6 @@
 name: Build Container Image
 
-on:
-  push:
-    branches: ['**']
-    tags: ['v*.*.*']
+on: [push]
 
 jobs:
   docker:
