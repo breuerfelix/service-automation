@@ -4,7 +4,7 @@ go 1.22.0
 
 require (
 	github.com/gin-gonic/gin v1.9.1
-	github.com/stretchr/testify v1.8.4
+	github.com/stretchr/testify v1.9.0
 	go.uber.org/automaxprocs v1.5.3
 )
 
