@@ -1,9 +1,9 @@
 name: Build Container Image
 
-# currently a github workflow cannot trigger another job
-# that is why no images are build on tag
-# because the tag gets pushed by a workflow
-on: [push]
+on:
+  push:
+    branches: ['**']
+    tags: ['v*.*.*']
 
 jobs:
   docker:
