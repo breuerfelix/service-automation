@@ -25,5 +25,8 @@ jobs:
           node-version: "lts/*"
       - name: Release
         env:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          # when using the generated GITHUB-TOKEN
+          # the release won't trigger a pipeline
+          # https://github.com/semantic-release/github?tab=readme-ov-file#github-authentication
+          GITHUB_TOKEN: ${{ secrets.PAT }}
         run: npx semantic-release
