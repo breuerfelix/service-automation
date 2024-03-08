@@ -10,8 +10,6 @@ jobs:
     steps:
       - name: Checkout
         uses: actions/checkout@v4
-        with:
-          fetch-depth: 0
       - name: Setup Node.js
         uses: actions/setup-node@v4
         with:
@@ -21,6 +19,6 @@ jobs:
           # when using the generated GITHUB-TOKEN
           # the release won't trigger a pipeline
           # https://github.com/semantic-release/github?tab=readme-ov-file#github-authentication
-          GITHUB_TOKEN: ${{ secrets.PAT }}
+          GH_TOKEN: ${{ secrets.PAT }}
           CI: true
         run: npx semantic-release --debug
