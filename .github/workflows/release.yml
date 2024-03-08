@@ -29,4 +29,5 @@ jobs:
           # the release won't trigger a pipeline
           # https://github.com/semantic-release/github?tab=readme-ov-file#github-authentication
           GITHUB_TOKEN: ${{ secrets.PAT }}
-        run: npx semantic-release
+          CI: true
+        run: npx semantic-release --debug
