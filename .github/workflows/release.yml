@@ -14,7 +14,7 @@ jobs:
       contents: read
     steps:
       - name: Checkout
-        uses: actions/checkout@v4
+        uses: actions/checkout@v5
         with:
           fetch-depth: 0
           # this ensures that the GITHUB_TOKEN gets not overridden
