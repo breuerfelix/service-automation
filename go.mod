@@ -3,7 +3,7 @@ module github.com/breuerfelix/talks/service-automation
 go 1.22.2
 
 require (
-	github.com/gin-gonic/gin v1.10.1
+	github.com/gin-gonic/gin v1.11.0
 	github.com/stretchr/testify v1.11.1
 	go.uber.org/automaxprocs v1.6.0
 )
